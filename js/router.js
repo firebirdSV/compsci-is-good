@@ -1,3 +1,14 @@
+/*
+Instead of displaying a different HTML document for each article, a snippet of 
+HTML code is inserted in to the `main` tag of `index.html` when the user wants 
+to view a page. This creates the effct of visiting different webpages, but the 
+user stays on `index.html`. That's why `index.html` looks empty. 
+
+For example, if the user were to click on the "social media" button in the navbar,
+the website would use Javascript to replace the `innerHTML` of the `main` tag in 
+`index.html` .
+ */
+
 // Renders the home screen
 function loadHomePage() {
     mainTag = document.getElementById("main");
