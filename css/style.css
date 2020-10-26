@@ -1,0 +1,14 @@
+:root {
+    --bg-color: #8F79EA;
+}
+
+body{
+    background-color: #E6E6E6;
+}
+nav{
+    background-color: var(--bg-color);
+}
+
+.nav-link.active{
+    font-weight: bold;
+}
