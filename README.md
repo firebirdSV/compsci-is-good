@@ -1,2 +1,2 @@
 # room3-compsci-info-website
-Website made for Programmig Black  
+Website made for Programming Black  
