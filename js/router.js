@@ -34,5 +34,16 @@ function loadArticle(articleName) {
 
 // Initialise the webpage
 window.onload = function() {
+
+    // Make navbar buttons functional
+    // Would be good to cut out this whole code block and iterate over nav bar elements
+    // from `document.getElementByClassName("nav-item")` and set the behaviour that way.
+    document.getElementById("home").onclick = () => loadHomePage();
+    document.getElementById("about-us").onclick = () => loadArticle("about-us");
+    document.getElementById("education").onclick = () => loadArticle("education");
+    document.getElementById("flood-prediction").onclick = () => loadArticle("flood-prediction");
+    document.getElementById("medicine").onclick = () => loadArticle("medicine");
+    document.getElementById("social-media").onclick = () => loadArticle("social-media");
+    
     loadHomePage();
 }
