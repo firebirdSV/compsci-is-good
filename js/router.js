@@ -11,9 +11,9 @@ the website would use Javascript to replace the `innerHTML` of the `main` tag in
 
 // Renders the home screen
 function loadHomePage() {
-    mainTag = document.getElementById("main");
+    mainTag = document.querySelector("main");
 
-    fetch("home.html")
+    fetch("articles/home.html")
         .then(HTMLcode => HTMLcode.text())
         .then(homepage => mainTag.innerHTML = homepage);
 }
