@@ -1,0 +1,25 @@
+:root {
+    --bg-color: #8F79EA;
+}
+
+body {
+    background-color: #E6E6E6;
+}
+nav {
+    background-color: var(--bg-color);
+}
+
+main {
+    width: 60%;
+    height: 100%;
+    margin: 0 auto;
+    margin-top: 30px;
+}
+
+h2 {
+    margin: 10px 5px 10px 25px;
+}
+
+.nav-link.active{
+    font-weight: bold;
+}
