@@ -10,6 +10,25 @@ function set_article_text(article_name){
     loadArticle(article_name);
 }
 
+function insert_author_card(author_name){
+    var author = authors[author_name]
+    $("#about-us-container").append(`
+        <div class="card">
+            <div class="row ">
+                <div class="col-md-7 px-3">
+                    <div class="card-block px-6">
+                        <h4 class="card-title">${author_name}</h4>
+                        <p class="card-text">${author["bio"]}</p>
+                        <br>
+                        <a href="#article-body" class="mt-auto btn btn-primary  ">Linked in</a>
+                        <a href="#article-body" class="mt-auto btn btn-primary  ">Github</a>
+                    </div>
+                </div>
+                <div class="col-md-5"><img class = 'author_img' src = 'authors/images/${author["image"]}'></div>
+            </div>
+        </div>
+    `)
+}
 
 Number.prototype.mod = function(n) {
     return ((this%n)+n)%n;
@@ -19,6 +38,12 @@ var articles
 $.getJSON('articles/articles.json', function(data){
     articles = data["articles"]
 });
+
+var authors
+$.getJSON('authors/authors.json', function(data){
+    authors = data["authors"]
+});
+
    
 $(document).ready(function(){
 
@@ -27,35 +52,36 @@ $(document).ready(function(){
     var i = 0;
     for(var article_name in articles){
         var article_data = articles[article_name]
-        $('#alt-navbar div.card-group').append(`
-        <div class = 'article-img-container'>
-            <img class = 'article-img' src = 'images/${article_data['image']}'>
-        </div>
-        `)
+        var active = (i==0 ? "active" : '')
 
         $('.nav-pages').append(`
-        <li class="nav-item"><a class = 'nav-link' href="#about_us">${article_name}</a></li>
+        <li class="nav-item"><a class = 'nav-link ${active}' href="#about_us">${article_name}</a></li>
         `)
 
         if(i==0){
             set_card_text(i)
         }
 
-        var active = (i==0 ? "active" : '')
         $(".carousel-inner").prepend(`
             <div class="carousel-item ${active}">
-                <img class="d-block" src= 'images/${article_data['image']}' alt="">
+                <img class="d-block" src= 'articles/images/${article_data['image']}' alt="">
             </div>
         `)
 
         $('.carousel-indicators').append(`
             <li data-target="#CarouselTest" data-slide-to="${i}" class="${active}"></li>
         `)
+
         i++;
+    }
+
+    for(var author_name in authors){
+        insert_author_card(author_name)
     }
 
     //hide article until 'Read More' is clicked for the frst time
     $('article').hide()
+    $("#about-us-container").hide()
 
     i = 0
 
@@ -90,12 +116,20 @@ $(document).ready(function(){
 
     //inject article when navbar btn clicked
     $(".nav-pages .nav-link").click(function(){
-        $(".navbar").find(".active").removeClass("active");
-        $(this).addClass("active");
+        $("#article-cards").show()
+        $("#article-container").show()
+        $("#about-us-container").hide()
 
         var article_name = $(this).text()
         set_article_text(article_name)
         i = Object.keys(articles).indexOf(article_name)
         set_card_text(i)
+    })
+
+    $(".nav-about-us").click(function(){
+        $("#article-cards").hide()
+        $("#article-container").hide()
+        $("#about-us-container").show()
+
     })
 });

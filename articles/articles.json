@@ -10,7 +10,8 @@
 
         },
         "Medicine": {
-            "image": "ipad_xray.png"
+            "image": "ipad_xray.png",
+            "description": "Technology is impacting many aspects of our lives as breakthroughs in data collection, research and treatments allow medical providers to use new tools and find fresh and innovative ways to practice medicine into the future."
         },
         "Social Media": {
             "image": "social_media_laptop.png",
