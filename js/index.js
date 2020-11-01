@@ -64,6 +64,7 @@ $(document).ready(function () {
 
         if (i == 0) {
             set_card_text(i)
+            set_article_text(article_name)
         }
 
         $(".carousel-inner").prepend(`
@@ -84,7 +85,6 @@ $(document).ready(function () {
     }
 
     //hide article until 'Read More' is clicked for the frst time
-    $('article').hide()
     $("#about-us-container").hide()
 
     i = 0
