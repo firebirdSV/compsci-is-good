@@ -13,7 +13,6 @@ function set_article_text(article_name) {
 function insert_author_card(author_name) {
     var author = authors[author_name]
     $("#about-us-container").append(`
-        <div class="card">
             <div class="row ">
                 <div class="col-md-7 px-3">
                     <div class="card-block px-6">
