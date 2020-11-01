@@ -81,4 +81,9 @@ h2 {
 
 .btn {
   margin-top: auto;
+  background-color: var(--bg-color);
+}
+
+.author-img{
+    border: 5px solid var(--bg-color);
 }
