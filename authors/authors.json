@@ -1,30 +1,27 @@
 {
-    "authors":{
+    "authors": {
         "Tom Abbot": {
-            "bio": "",
+            "bio": "Tom Abbot is a first year Computer Science student studying at Durham University, which isn't too far away form his home town of York. In addition to his passion for computer science, Tom loves to play the Euphonium; a brass instrument which he has been playing for 12 years. Tom is also a cooking enthusiast; a great to skill to have in this coming lock-down.  ",
             "image": "tom_abbott.jpg",
-            "linked-in":"https://www.linkedin.com/in/tom-abbott-7743251a3/",
+            "linked-in": "https://www.linkedin.com/in/tom-abbott-7743251a3/",
             "github": "https://github.com/tabbeyy"
         },
-
         "Joe Clinton": {
             "bio": "Joe Clinton is a Computer Science student at Durham University and creator of ibrecap.com - an online resource for IB revision that has helped thousands of users. He spent 8 years living in Switzerland, and enjoys table tennis, badminton, and running.",
             "image": "joe_clinton.jpg",
-            "linked-in":"https://www.linkedin.com/in/joseph-clinton-9b6874164/",
+            "linked-in": "https://www.linkedin.com/in/joseph-clinton-9b6874164/",
             "github": "https://github.com/Joeclinton1"
         },
-
         "Scarlett Watson-Jackson": {
             "bio": "Scarlett Watson-Jackson is a first year Computer Science student at Durham University. She is from Hayward's Heath. She has two younger siblings and a dog named Luna.",
             "image": "ScarlettWJ.jpg",
-            "linked-in":"https://www.linkedin.com/in/scarlett-watson-jackson-3155191b9/",
+            "linked-in": "https://www.linkedin.com/in/scarlett-watson-jackson-3155191b9/",
             "github": "https://github.com/ScarlettFlames"
         },
-
         "Livia Brookes": {
             "bio": "Livia Brookes is a first year student at Durham University studying Computer Science. She grew up in Cambridge with her two cats and unfortunately has broken three bones.",
             "image": "LiviaBrookes.jpg",
-            "linked-in":"https://www.linkedin.com/in/livia-brookes-a620711ba/",
+            "linked-in": "https://www.linkedin.com/in/livia-brookes-a620711ba/",
             "github": "https://github.com/orangeparrotcarrot"
         }
     }
