@@ -13,6 +13,7 @@ function set_article_text(article_name) {
 function insert_author_card(author_name) {
     var author = authors[author_name]
     $("#about-us-container").append(`
+        <div class = "card">
             <div class="row ">
                 <div class="col-md-7 px-3">
                     <div class="card-block px-6">
@@ -23,8 +24,10 @@ function insert_author_card(author_name) {
                         <a href="${author['github']}" class="mt-auto btn btn-primary  ">Github</a>
                     </div>
                 </div>
-                <div class="col-md-5 p-5 author-img-container">
-                    <img class = 'author-img img-responsive rounded-circle' data-holder-rendered='true' alt='profile picture' src = 'authors/images/${author["image"]}'>
+                <div class="col-md-5 p-5">
+                    <div class = 'author-img-container rounded-circle'>
+                        <img class = 'author-img img-responsive' data-holder-rendered='true' alt='profile picture' src = 'authors/images/${author["image"]}'>
+                    </div>
                 </div>
             </div>
         </div>
