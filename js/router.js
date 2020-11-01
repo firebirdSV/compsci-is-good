@@ -16,7 +16,7 @@ the website would use Javascript to replace the `innerHTML` of the element with 
 function loadArticle(articleName) {
     // Reference to the tag we're updating
     articleBody = document.getElementById('article-body');
-    articleName = articleName.replace(/\s+/g, '-').toLowerCase()
+    articleName = articleName.dash_lower();
     // Load the article as HTML code. Then convert it to a
     // string. Finally, we insert the string in to `index.html` 
     fetch(`articles/${articleName}.html`)

@@ -1,3 +1,7 @@
+String.prototype.dash_lower =  function(){
+    return this.replace(/\s+/g, '-').toLowerCase()
+}
+
 function set_card_text(i) {
     var [article_name, article_data] = Object.entries(articles)[i]
     $('#article-cards .card-title').text(article_name)
@@ -5,15 +9,18 @@ function set_card_text(i) {
 }
 
 function set_article_text(article_name) {
+    var article_author = articles[article_name]['author']
     $('article').show()
     $('article .card-title').text(article_name)
     loadArticle(article_name);
+    $('.article-author .btn').text(article_author)
+    $('.article-author .btn').attr('href', '#'+article_author.dash_lower())
 }
 
 function insert_author_card(author_name) {
     var author = authors[author_name]
     $("#about-us-container").append(`
-        <div class = "card">
+        <div id = "${author_name.dash_lower()}" class = "card">
             <div class="row ">
                 <div class="col-md-7 px-3">
                     <div class="card-block px-6">
@@ -32,6 +39,18 @@ function insert_author_card(author_name) {
             </div>
         </div>
     `)
+}
+
+function showAboutUs(){
+    $("#article-cards").hide();
+    $("#article-container").hide();
+    $("#about-us-container").show();
+}
+
+function showArticle(){
+    $("#article-cards").show();
+    $("#article-container").show();
+    $("#about-us-container").hide();
 }
 
 Number.prototype.mod = function (n) {
@@ -120,9 +139,7 @@ $(document).ready(function () {
 
     //inject article when navbar btn clicked
     $(".nav-pages .nav-link").click(function () {
-        $("#article-cards").show()
-        $("#article-container").show()
-        $("#about-us-container").hide()
+        showArticle();
 
         var article_name = $(this).text()
         set_article_text(article_name)
@@ -131,8 +148,11 @@ $(document).ready(function () {
     })
 
     $(".nav-about-us").click(function () {
-        $("#article-cards").hide()
-        $("#article-container").hide()
-        $("#about-us-container").show()
+        showAboutUs();
+    })
+
+    //go to authors card when author btn clicked
+    $('.article-author .btn').click(function(){
+        showAboutUs();
     })
 });

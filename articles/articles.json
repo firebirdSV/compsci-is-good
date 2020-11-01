@@ -2,20 +2,23 @@
     "articles": {
         "Education": {
             "image": "man_teaching_children.png",
-            "description": "In the age of online school, the use of computer science in education has never been more important."
+            "description": "In the age of online school, the use of computer science in education has never been more important.",
+            "author": "Livia Brookes"
         },
         "Flood Prediction": {
             "image": "flood_prediction.png",
-            "description": "Flooding has been a part of life for all of human history. In early Egypt, geometry developed as a way to redraw field boundaries after the annual flooding of the river Nile. Today, machine learning models and weather simulations are used to predict floods before they happen."
-
+            "description": "Flooding has been a part of life for all of human history. In early Egypt, geometry developed as a way to redraw field boundaries after the annual flooding of the river Nile. Today, machine learning models and weather simulations are used to predict floods before they happen.",
+            "author": "Tom Abbot"
         },
         "Healthcare": {
             "image": "ipad_xray.png",
-            "description": "Technology is impacting many aspects of our lives as breakthroughs in data collection, research and treatments allow medical providers to use new tools and find fresh and innovative ways to practice medicine into the future."
+            "description": "Technology is impacting many aspects of our lives as breakthroughs in data collection, research and treatments allow medical providers to use new tools and find fresh and innovative ways to practice medicine into the future.",
+            "author": "Joe Clinton"
         },
         "Social Media": {
             "image": "social_media_laptop.png",
-            "description": "Social media is becoming an increasingly important part of our lives, particularly during COVID, allowing us to create and maintain relationships with many more people than we would be able to interact with in our daily lives."
+            "description": "Social media is becoming an increasingly important part of our lives, particularly during COVID, allowing us to create and maintain relationships with many more people than we would be able to interact with in our daily lives.",
+            "author": "Scarlett Watson-Jackson"
         }
     }
 }

@@ -1,9 +1,18 @@
+@font-face {
+    font-family: 'coolvetica';
+    src: url('fonts/coolvetica rg.ttf');
+}
+
 :root {
     --bg-color: #8F79EA;
 }
 
 body {
     background-color: #E6E6E6;
+}
+
+.article-author{
+    font-family: "coolvetica";
 }
 nav {
     background-color: var(--bg-color);
@@ -104,4 +113,8 @@ h2 {
     overflow:hidden;
     position:relative;
     border: 5px solid var(--bg-color);
+}
+
+.article-author{
+    text-align: center;
 }
