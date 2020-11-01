@@ -2,13 +2,13 @@
     "authors":{
         "Tom Abbot": {
             "bio": "",
-            "image": "",
-            "linked-in":"",
-            "github": ""
+            "image": "tom_abbott.jpg",
+            "linked-in":"https://www.linkedin.com/in/tom-abbott-7743251a3/",
+            "github": "https://github.com/tabbeyy"
         },
 
         "Joe Clinton": {
-            "bio": "",
+            "bio": "Joe Clinton is a Computer Science student at Durham University and creator of ibrecap.com - an online resource for IB revision that has helped thousands of users. He spent 8 years living in Switzerland, and enjoys table tennis, badminton, and running.",
             "image": "joe_clinton.jpg",
             "linked-in":"https://www.linkedin.com/in/joseph-clinton-9b6874164/",
             "github": "https://github.com/Joeclinton1"

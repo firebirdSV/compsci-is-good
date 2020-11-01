@@ -84,6 +84,24 @@ h2 {
   background-color: var(--bg-color);
 }
 
+#article-body{
+    min-height: 90vh;
+}
+
 .author-img{
+    position: absolute;
+    width: 110%;
+    margin: auto;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+}
+
+.author-img-container{
+    padding-bottom:100%;
+    width:100%;
+    overflow:hidden;
+    position:relative;
     border: 5px solid var(--bg-color);
 }
