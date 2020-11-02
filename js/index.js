@@ -1,6 +1,6 @@
 "use strict";
 
-import Article from "/js/article.js";
+import Article from "https://joeclinton1.github.io/compsci-is-good/js/article.js";
 import Authors from "/js/authors.js";
 import Navbar from "/js/navbar.js";
 
