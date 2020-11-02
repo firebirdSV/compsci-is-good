@@ -1,8 +1,8 @@
 "use strict";
 
-import Article from "/compsci-is-good/js/article.js";
-import Authors from "/compsci-is-good/js/authors.js";
-import Navbar from "/compsci-is-good/js/navbar.js";
+import Article from "./article.js";
+import Authors from "./authors.js";
+import Navbar from "./navbar.js";
 
 //define mod function
 Number.prototype.mod = function (n) {

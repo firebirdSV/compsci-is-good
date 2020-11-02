@@ -39,7 +39,7 @@ export default class Navbar{
 
     setup(){
         let thisclass = this
-        $.getJSON('/articles/articles.json', function (data) {
+        $.getJSON('articles/articles.json', function (data) {
             thisclass.articles = data["articles"]
             thisclass.inject_dom()
             thisclass.addEventListeners();
