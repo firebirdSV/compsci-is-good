@@ -44,7 +44,7 @@ export default class Article{
     }
 
     insert_carousel_item(image, slide_to, active){
-        $(".carousel-inner").prepend(`
+        $(".carousel-images").append(`
                 <div class="carousel-item ${active}">
                     <img class="d-block" src= 'articles/images/${image}' alt="">
                 </div>
@@ -83,6 +83,7 @@ export default class Article{
 
     inject_dom(){
         let i = 0;
+        const num_articles = Object.keys(this.articles).length;
         for (var article_name in this.articles) {
             var article_data = this.articles[article_name]
             var active = (i == 0 ? "active" : '')
@@ -92,6 +93,7 @@ export default class Article{
                 this.set_article_text(article_name)
             }
 
+            //insert the article image in the carousel. Num_articles-i must be used because it is prepending the image
             this.insert_carousel_item(article_data['image'], i, active)
             i++;
         }
