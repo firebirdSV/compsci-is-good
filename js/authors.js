@@ -50,6 +50,7 @@ export default class Authors{
         for (var author_name in this.authors) {
             this.insert_author_card(author_name)
         }
+        $("#about-us-container").hide();
     }
 
     setup(){
