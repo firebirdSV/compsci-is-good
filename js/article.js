@@ -29,7 +29,8 @@ export default class Article{
     changePage(article_name){
         this.show_article();
         this.set_article_text(article_name)
-        this.set_card_text(article_name)
+        this.set_card_text(article_name) 
+        this.set_carousel_number(article_name)
 
         //change active navbar
         $(".navbar").find(".active").removeClass("active");
@@ -41,6 +42,11 @@ export default class Article{
         var  article_data = this.articles[article_name]
         $('#article-navbar .card-title').text(article_name)
         $('#article-navbar .card-text').text(article_data['description'])
+    }
+
+    set_carousel_number(article_name){
+        var number = Object.keys(this.articles).indexOf(article_name)
+        $('.carousel').carousel(number)
     }
 
     insert_carousel_item(image, slide_to, active){

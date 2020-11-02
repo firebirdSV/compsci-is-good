@@ -35,6 +35,11 @@ h2 {
 
 .title{
     max-width:600px;
+    transition: filter 2s cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+
+.title:hover{
+    filter: hue-rotate(45deg);
 }
 
 .card-block {
