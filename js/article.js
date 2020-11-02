@@ -11,18 +11,18 @@ export default class Article{
         let thisclass = this;
         //add js for carousel
         $(".carousel-control-next").on("click", () => {
-            thisclass.article_index = (thisclass.article_index + 1).mod(Object.keys(thisclass.articles).length)
-            thisclass.changePage(Object.keys(thisclass.articles)[thisclass.article_index])
+            thisclass.article_index = (thisclass.article_index + 1).mod(Object.keys(thisclass.articles).length);
+            thisclass.changePage(Object.keys(thisclass.articles)[thisclass.article_index]);
         });
 
         $(".carousel-control-prev").on("click", () => {
-            thisclass.article_index = (thisclass.article_index - 1).mod(Object.keys(thisclass.articles).length)
-            thisclass.changePage(Object.keys(thisclass.articles)[thisclass.article_index])
+            thisclass.article_index = (thisclass.article_index - 1).mod(Object.keys(thisclass.articles).length);
+            thisclass.changePage(Object.keys(thisclass.articles)[thisclass.article_index]);
         });
 
         $(".carousel-indicators>li").click(function () {
-            thisclass.article_index = parseInt($(this).attr('data-slide-to'))
-            thisclass.changePage(Object.keys(thisclass.articles)[thisclass.article_index])
+            thisclass.article_index = parseInt($(this).attr('data-slide-to'));
+            thisclass.changePage(Object.keys(thisclass.articles)[thisclass.article_index]);
         });
     }
 
@@ -30,7 +30,7 @@ export default class Article{
         this.show_article();
         this.set_article_text(article_name)
         this.set_card_text(article_name) 
-        this.set_carousel_number(article_name)
+        this.set_carousel_img(article_name)
 
         //change active navbar
         $(".navbar").find(".active").removeClass("active");
@@ -44,8 +44,8 @@ export default class Article{
         $('#article-navbar .card-text').text(article_data['description'])
     }
 
-    set_carousel_number(article_name){
-        var number = Object.keys(this.articles).indexOf(article_name)
+    set_carousel_img(article_name){
+        var number = Object.keys(this.articles).indexOf(article_name)-1
         $('.carousel').carousel(number)
     }
 
