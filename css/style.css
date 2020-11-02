@@ -110,3 +110,11 @@ h2 {
 li::marker, p>a{
     color: var(--bg-color)
 }
+
+
+@media only screen and (max-width: 575px) {
+    .nav-about-us{
+        border-left: none;
+        border-top: 2px solid rgba(255,255,255,.5);
+    }
+}
