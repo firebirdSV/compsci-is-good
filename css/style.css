@@ -18,6 +18,10 @@ nav {
     background-color: var(--bg-color);
 }
 
+.nav-about-us{
+    border-left: 2px solid rgba(255,255,255,.5);
+}
+
 main {
     width: 60%;
     height: 100%;
