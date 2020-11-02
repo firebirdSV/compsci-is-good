@@ -106,3 +106,7 @@ h2 {
 .article-author{
     text-align: center;
 }
+
+li::marker, p>a{
+    color: var(--bg-color)
+}
