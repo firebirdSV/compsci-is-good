@@ -17,11 +17,8 @@ export default class Navbar{
 
          //inject article when navbar btn clicked
          $(".nav-pages .nav-link").click(function(){
-            thisclass.article.show_article();
             var article_name = $(this).text()
-            thisclass.article.set_article_text(article_name)
-            thisclass.article.article_index = Object.keys(thisclass.articles).indexOf(article_name)
-            thisclass.article.set_card_text(thisclass.article.article_index)
+            thisclass.article.changePage(article_name)
         });
     }
 
@@ -36,7 +33,7 @@ export default class Navbar{
 
     insert_nav_item(text, active){
         $('.nav-pages').append(`
-        <li class="nav-item"><a class = 'nav-link ${active}' href="#about_us">${text}</a></li>
+        <li class="nav-item"><a class = 'nav-link ${active}' data-name = '${text}' href="#article-navbar">${text}</a></li>
         `)
     }
 

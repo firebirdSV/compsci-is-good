@@ -12,29 +12,33 @@ export default class Article{
         //add js for carousel
         $(".carousel-control-next").on("click", () => {
             thisclass.article_index = (thisclass.article_index + 1).mod(Object.keys(thisclass.articles).length)
-            thisclass.set_card_text(i)
+            thisclass.changePage(Object.keys(thisclass.articles)[thisclass.article_index])
         });
 
         $(".carousel-control-prev").on("click", () => {
             thisclass.article_index = (thisclass.article_index - 1).mod(Object.keys(thisclass.articles).length)
-            thisclass.set_card_text(i)
+            thisclass.changePage(Object.keys(thisclass.articles)[thisclass.article_index])
         });
 
         $(".carousel-indicators>li").click(function () {
-            console.log($(this))
             thisclass.article_index = parseInt($(this).attr('data-slide-to'))
-            thisclass.set_card_text(i)
-        });
-
-        //inject article when read_more btn clicked
-        $("#article-navbar .btn").on("click", () => {
-            var article_name = Object.keys(thisclass.articles)[thisclass.article_index]
-            thisclass.set_article_text(article_name)
+            thisclass.changePage(Object.keys(thisclass.articles)[thisclass.article_index])
         });
     }
 
-    set_card_text(i) {
-        var [article_name, article_data] = Object.entries(this.articles)[i]
+    changePage(article_name){
+        this.show_article();
+        this.set_article_text(article_name)
+        this.set_card_text(article_name)
+
+        //change active navbar
+        $(".navbar").find(".active").removeClass("active");
+        console.log(article_name)
+        $(`.navbar .nav-link[data-name='${article_name}']`).addClass("active");
+    }
+
+    set_card_text(article_name) {
+        var  article_data = this.articles[article_name]
         $('#article-navbar .card-title').text(article_name)
         $('#article-navbar .card-text').text(article_data['description'])
     }
@@ -84,7 +88,7 @@ export default class Article{
             var active = (i == 0 ? "active" : '')
 
             if (i == 0) {
-                this.set_card_text(i)
+                this.set_card_text(article_name)
                 this.set_article_text(article_name)
             }
 
