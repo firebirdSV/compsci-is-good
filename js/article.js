@@ -12,26 +12,29 @@ export default class Article{
         //add js for carousel
         $(".carousel-control-next").on("click", () => {
             thisclass.article_index = (thisclass.article_index + 1).mod(Object.keys(thisclass.articles).length);
-            thisclass.changePage(Object.keys(thisclass.articles)[thisclass.article_index]);
+            thisclass.changePage(Object.keys(thisclass.articles)[thisclass.article_index], 1);
         });
 
         $(".carousel-control-prev").on("click", () => {
             thisclass.article_index = (thisclass.article_index - 1).mod(Object.keys(thisclass.articles).length);
-            thisclass.changePage(Object.keys(thisclass.articles)[thisclass.article_index]);
+            thisclass.changePage(Object.keys(thisclass.articles)[thisclass.article_index], 1);
         });
 
         $(".carousel-indicators>li").click(function () {
             thisclass.article_index = parseInt($(this).attr('data-slide-to'));
-            thisclass.changePage(Object.keys(thisclass.articles)[thisclass.article_index]);
+            thisclass.changePage(Object.keys(thisclass.articles)[thisclass.article_index], 1);
         });
     }
 
-    changePage(article_name){
+    changePage(article_name, do_not_set_image){
         this.show_article();
         this.set_article_text(article_name)
-        this.set_card_text(article_name) 
-        this.set_carousel_img(article_name)
-
+        this.set_card_text(article_name)
+        
+        if(do_not_set_image === undefined){
+            this.set_carousel_img(article_name);
+        }
+            
         //change active navbar
         $(".navbar").find(".active").removeClass("active");
         console.log(article_name)
@@ -45,7 +48,8 @@ export default class Article{
     }
 
     set_carousel_img(article_name){
-        var number = Object.keys(this.articles).indexOf(article_name)-1
+        var number = Object.keys(this.articles).indexOf(article_name)
+        console.log(number)
         $('.carousel').carousel(number)
     }
 
